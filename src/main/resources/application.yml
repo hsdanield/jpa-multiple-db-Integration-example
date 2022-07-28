@@ -1,0 +1,37 @@
+spring:
+  hibernate:
+    globally_quoted_identifiers: true
+
+  #MYSQL
+  datasource-mysql:
+    driverClassName: org.h2.Driver
+    jdbcUrl: jdbc:h2:mem:mysql
+    username: mysql
+    password:
+
+  #POSTGRESQL
+  datasource-postgresql:
+    jdbcUrl: jdbc:h2:mem:postgresql
+    username: postgresql
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      globally_quoted_identifiers: true
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+
+
+
+#
+#  #ORACLE
+#  datasource-oracle:
+#    jdbcUrl: jdbc:h2:mem:oracle
+#    username: sa
+#    password:
+
