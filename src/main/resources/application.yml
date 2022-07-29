@@ -1,37 +1,30 @@
 spring:
-  hibernate:
-    globally_quoted_identifiers: true
 
   #MYSQL
   datasource-mysql:
-    driverClassName: org.h2.Driver
-    jdbcUrl: jdbc:h2:mem:mysql
-    username: mysql
-    password:
+    jdbcUrl: jdbc:mysql://localhost:3306/local
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+    custom-param:
+      hibernate:
+        ddl-auto: create-drop
 
   #POSTGRESQL
   datasource-postgresql:
-    jdbcUrl: jdbc:h2:mem:postgresql
-    username: postgresql
-    password:
+    jdbcUrl: jdbc:postgresql://localhost:5432/postgres?currentSchema=local
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+    custom-param:
+      hibernate:
+        ddl-auto: create-drop
 
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     generate-ddl: true
-    hibernate:
-      globally_quoted_identifiers: true
-      ddl-auto: update
+
   h2:
     console:
       enabled: true
-
-
-
-#
-#  #ORACLE
-#  datasource-oracle:
-#    jdbcUrl: jdbc:h2:mem:oracle
-#    username: sa
-#    password:
 
